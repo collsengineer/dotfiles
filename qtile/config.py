@@ -265,7 +265,8 @@ def init_widgets_list():
                         background=colors[1]
                     ),
                widget.Image(
-                        filename="~/.config/qtile/icons/bar_icons/python-white.png",
+                        filename = "~/.config/qtile/icons/bar_icons/tux2.png",
+            #filename="~/.config/qtile/icons/bar_icons/python-white.png",
                         scale='False',
                         background=colors[1]
                     ),
