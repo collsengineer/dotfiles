@@ -265,8 +265,13 @@ def init_widgets_list():
                         background=colors[1]
                     ),
                widget.Image(
-                        filename = "~/.config/qtile/icons/bar_icons/tux2.png",
-            #filename="~/.config/qtile/icons/bar_icons/python-white.png",
+            #filename = "~/.config/qtile/icons/bar_icons/tux1.png", # Linux's Tux icon
+            #filename="~/.config/qtile/icons/bar_icons/python_classic.png", # Python classic icon
+            #filename = "~/.config/qtile/icons/bar_icons/gopher.png", # blue Gopher icon
+            #filename = "~/.config/qtile/icons/bar_icons/archlinux_black.png", # Arch linux logo black
+                        filename = "~/.config/qtile/icons/bar_icons/archlinux_blue.png", # Arch linux logo blue 
+            #filename = "~/.config/qtile/icons/bar_icons/golang.png", # Golang logo 
+            #filename = "~/.config/qtile/icons/bar_icons/gopher_red.png", # red Gopher 
                         scale='False',
                         background=colors[1]
                     ),
