@@ -19,6 +19,10 @@ local plugins = {
                 -- C/C++
                 "clangd",
                 "clang-format",
+                -- HTML-CSS
+                "emmet-ls",
+                -- SQL
+                "sqlls",
             },
         },
     },

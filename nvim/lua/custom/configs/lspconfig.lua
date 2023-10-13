@@ -52,3 +52,45 @@ lspconfig.clangd.setup {
     end,
     capabilities = capabilities,
 }
+
+-- HTML-CSS LSP setup
+lspconfig.emmet_ls.setup({
+    --on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = {"emmet-ls", "--stdio"},
+    filetypes = {
+        "astro",
+        "eruby",
+        "html",
+        "htmldjango",
+        "javascriptreact",
+        "less",
+        "pug",
+        "sass",
+        "scss",
+        "svelte",
+        "typescriptreact",
+        "vue",
+    },
+    init_options = {
+        options = {
+            ["bem.enabled"] = true,
+        },
+    },
+})
+
+-- SQL LSP setup
+lspconfig.sqlls.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = {
+        "sql-language-server",
+        "up",
+        "--method",
+        "stdio",
+    },
+    filetypes = {
+        "sql",
+        "mysql",
+    },
+}
