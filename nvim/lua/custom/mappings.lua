@@ -36,6 +36,19 @@ M.dap_go = {
     }
 }
 
+M.gopher = {
+    pluging = true,
+    n = {
+        ["<leader>gsj"] = {
+            "<cmd> GoTagAdd json <CR>",
+            "Add json struct tags"
+        },
+        ["<leader>gsy"] = {
+            "<cmd> GoTagAdd yaml <CR>",
+            "Add yaml struct tags"
+        }
+    }
+}
 
 M.crates = {
     n = {
