@@ -16,6 +16,9 @@ local plugins = {
                 "debugpy",
                 -- Rust
                 "rust-analyzer",
+                -- C/C++
+                "clangd",
+                "clang-format",
             },
         },
     },
@@ -74,6 +77,7 @@ local plugins = {
     },
     {
         "jose-elias-alvarez/null-ls.nvim",
+        event = "VeryLazy",
         ft = {
             "go",
             "python",
