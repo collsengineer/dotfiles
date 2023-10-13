@@ -29,8 +29,8 @@ opt.mouse = "a"
 
 -- Numbers
 opt.number = true
-opt.relativenumber = true
 opt.numberwidth = 2
+opt.relativenumber = true
 opt.ruler = false
 
 -- disable nvim intro
@@ -59,7 +59,7 @@ end
 
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
-vim.env.PATH = vim.env.PATH .. (is_windows and ";" or ":") .. vim.fn.stdpath "data" .. "/mason/bin"
+vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin" .. (is_windows and ";" or ":") .. vim.env.PATH
 
 -------------------------------------- autocmds ------------------------------------------
 local autocmd = vim.api.nvim_create_autocmd
@@ -73,11 +73,10 @@ autocmd("FileType", {
 })
 
 -- reload some chadrc options on-save
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = vim.tbl_map(
-    vim.fs.normalize,
-    vim.fn.glob(vim.fn.stdpath "config" .. "/lua/custom/**/*.lua", true, true, true)
-  ),
+autocmd("BufWritePost", {
+  pattern = vim.tbl_map(function(path)
+    return vim.fs.normalize(vim.loop.fs_realpath(path))
+  end, vim.fn.glob(vim.fn.stdpath "config" .. "/lua/custom/**/*.lua", true, true, true)),
   group = vim.api.nvim_create_augroup("ReloadNvChad", {}),
 
   callback = function(opts)
@@ -95,8 +94,14 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     vim.g.transparency = config.ui.transparency
 
     -- statusline
-    require("plenary.reload").reload_module("nvchad_ui.statusline." .. config.ui.statusline.theme)
-    vim.opt.statusline = "%!v:lua.require('nvchad_ui.statusline." .. config.ui.statusline.theme .. "').run()"
+    require("plenary.reload").reload_module("nvchad.statusline." .. config.ui.statusline.theme)
+    vim.opt.statusline = "%!v:lua.require('nvchad.statusline." .. config.ui.statusline.theme .. "').run()"
+
+    -- tabufline
+    if config.ui.tabufline.enabled then
+      require("plenary.reload").reload_module "nvchad.tabufline.modules"
+      vim.opt.tabline = "%!v:lua.require('nvchad.tabufline.modules').run()"
+    end
 
     require("base46").load_all_highlights()
     -- vim.cmd("redraw!")
@@ -107,5 +112,5 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 local new_cmd = vim.api.nvim_create_user_command
 
 new_cmd("NvChadUpdate", function()
-  require "nvchad.update"()
+  require "nvchad.updater"()
 end, {})

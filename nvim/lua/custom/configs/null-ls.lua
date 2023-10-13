@@ -7,10 +7,10 @@ local opts = {
         null_ls.builtins.formatting.gofumpt,
         null_ls.builtins.formatting.goimports_reviser,
         null_ls.builtins.formatting.golines,
-        -- Python formatters
+        -- Python formaterrs
+        null_ls.builtins.formatting.black,
         null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.diagnostics.ruff,
-        null_ls.builtins.formatting.black,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
@@ -22,7 +22,7 @@ local opts = {
                 group = augroup,
                 buffer = bufnr,
                 callback = function()
-                    vim.lsp.buf.format({bufnr = bufnr})
+                    vim.lsp.buf.format({ bufnr = bufnr })
                 end,
             })
         end
