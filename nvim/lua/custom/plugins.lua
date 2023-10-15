@@ -27,6 +27,10 @@ local plugins = {
         },
     },
     {
+        "christoomey/vim-tmux-navigator",
+        lazy = false,
+    },
+    {
         "mfussenegger/nvim-dap",
         init = function()
             require("core.utils").load_mappings("dap")
@@ -57,11 +61,21 @@ local plugins = {
         opts = {
             ensure_installed = {
                 "html",
+                "htmldjango",
                 "css",
                 "bash",
                 "python",
                 "go",
+                "gomod",
+                "gowork",
+                "gosum",
+                "git_config",
+                "git_rebase",
+                "gitattributes",
+                "gitcommit",
+                "gitignore",
                 "vim",
+                "vimdoc",
                 "lua",
                 "json",
                 "javascript",
@@ -69,17 +83,20 @@ local plugins = {
                 "rust",
                 "c",
                 "cpp",
+                "sql",
+                "toml",
+                "markdown",
+                "latex",
+                "dockerfile",
+                "comment",
+                "csv",
+                "fish",
+                "requirements",
             },
         },
     },
     {
-        "neovim/nvim-lspconfig",
-        config = function()
-            require "plugins.configs.lspconfig"
-            require "custom.configs.lspconfig"
-        end,
-    },
-    {
+        "neovim/nvim-lspconfig", config = function() require "plugins.configs.lspconfig" require "custom.configs.lspconfig" end, }, {
         "jose-elias-alvarez/null-ls.nvim",
         event = "VeryLazy",
         ft = {
@@ -95,7 +112,7 @@ local plugins = {
         ft = "go",
         config = function(_, opts)
             require("gopher").setup(opts)
-            require("core.utils").load_mappings("gopher")
+            --require("core.utils").load_mappings("gopher")
         end,
         build = function()
             vim.cmd [[silent! GoInstallDeps]]
