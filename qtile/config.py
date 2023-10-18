@@ -197,7 +197,7 @@ for i in groups:
 def init_layout_theme():
     return {"margin":6,
             "border_width":2,
-            "border_focus": "#f5c2e7",
+            "border_focus": "#f38ba8",
             "border_normal": "#bac2de",
             }
 
@@ -221,24 +221,28 @@ layouts = [
 def init_colors():
     
     return [
-           ["#282c34", "#282c34"],
-           ["#1c1f24", "#1c1f24"],
-           ["#dfdfdf", "#dfdfdf"],
-           ["#ff6c6b", "#ff6c6b"],
-           ["#98be65", "#98be65"],
-           ["#da8548", "#da8548"],
-           ["#51afef", "#51afef"],
-           ["#c678dd", "#c678dd"],
-           ["#46d9ff", "#46d9ff"],
-           ["#a9a1e1", "#a9a1e1"],
-           ["#45475a", "#45475a"], # 10 CapputchingMocha theme
-           ["#f38ba8", "#f38ba8"], # 11
+           ["#282c34", "#282c34"], # 0
+           ["#1c1f24", "#1c1f24"], # 1
+           ["#dfdfdf", "#dfdfdf"], # 2
+           ["#ff6c6b", "#ff6c6b"], # 3
+           ["#98be65", "#98be65"], # 4
+           ["#da8548", "#da8548"], # 5
+           ["#51afef", "#51afef"], # 6
+           ["#c678dd", "#c678dd"], # 7
+           ["#46d9ff", "#46d9ff"], # 8
+           ["#a9a1e1", "#a9a1e1"], # 9
+           ["#181825", "#181825"], # 10 CapputchingMocha theme
+           ["#eba0ac", "#eba0ac"], # 11
            ["#a6e3a1", "#a6e3a1"], # 12
            ["#f9e2af", "#f9e2af"], # 13
            ["#89b4fa", "#89b4fa"], # 14
            ["#f5c2e7", "#f5c2e7"], # 15
            ["#94e2d5", "#94e2d5"], # 16
-           ["#bac2de", "#bac2de"]  # 17
+           ["#bac2de", "#bac2de"], # 17
+           ["#313244", "#313244"], # 18
+           ["#45475a", "#45475a"], # 19
+           ["#74c7ec", "#74c7ec"], # 20
+           ["#6c7086", "#6c7086"], # 21
     ]
 
 colors = init_colors()
@@ -251,7 +255,7 @@ def init_widgets_defaults():
                 font="Ubuntu Bold",
                 fontsize=13,
                 padding=2,
-                background=colors[1])
+                background=colors[10])
 
 widget_defaults = init_widgets_defaults()
 
@@ -262,24 +266,24 @@ def init_widgets_list():
                         linewidth=0,
                         padding=6,
                         foreground=colors[2],
-                        background=colors[1]
+                        background=colors[10]
                     ),
                widget.Image(
             #filename = "~/.config/qtile/icons/bar_icons/tux1.png", # Linux's Tux icon
             #filename="~/.config/qtile/icons/bar_icons/python_classic.png", # Python classic icon
-            #filename = "~/.config/qtile/icons/bar_icons/gopher.png", # blue Gopher icon
+                        filename = "~/.config/qtile/icons/bar_icons/gopher.png", # blue Gopher icon
             #filename = "~/.config/qtile/icons/bar_icons/archlinux_black.png", # Arch linux logo black
-                        filename = "~/.config/qtile/icons/bar_icons/archlinux_blue.png", # Arch linux logo blue 
+            #filename = "~/.config/qtile/icons/bar_icons/archlinux_blue.png", # Arch linux logo blue 
             #filename = "~/.config/qtile/icons/bar_icons/golang.png", # Golang logo 
             #filename = "~/.config/qtile/icons/bar_icons/gopher_red.png", # red Gopher 
                         scale='False',
-                        background=colors[1]
+                        background=colors[10]
                     ),
                widget.Sep(
                         linewidth=0,
                         padding=6,
                         foreground=colors[2],
-                        background=colors[1]
+                        background=colors[10]
                     ),
                widget.GroupBox(
                         font="JetBrainsMono Nerd Font Medium",
@@ -291,16 +295,16 @@ def init_widgets_list():
                         borderwidth=3,
                         #disable_drag=True,
                         active=colors[12],
-                        inactive=colors[14],
+                        inactive=colors[19],
                         rounded=False,
-                        highlight_color=colors[1],
+                        highlight_color=colors[10],
                         highlight_method="line",
                         this_current_screen_border=colors[6],
                         this_screen_border=colors[4],
                         other_current_screen_border=colors[6],
                         other_screen_border=colors[4],
                         foreground=colors[2],
-                        background=colors[1]
+                        background=colors[10]
                         ),
                #widget.Sep(
                #         linewidth = 1,
@@ -311,7 +315,7 @@ def init_widgets_list():
                widget.TextBox(
                         text='|',
                         font="Ubuntu Bold",
-                        background=colors[1],
+                        background=colors[10],
                         foreground='474747',
                         padding=2,
                         fontsize=11
@@ -319,20 +323,20 @@ def init_widgets_list():
                widget.CurrentLayoutIcon(
                         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons/bar_icons")],
                         foreground=colors[13],
-                        background=colors[1],
+                        background=colors[10],
                         padding=0,
                         scale=0.5
                        ),
                widget.CurrentLayout(
                         font="Ubuntu Bold",
-                        foreground=colors[2],
-                        background=colors[1],
+                        foreground=colors[21],
+                        background=colors[10],
                         padding=5
                         ),
                widget.TextBox(
                         text='|',
                         font="Ubuntu Bold",
-                        background=colors[1],
+                        background=colors[10],
                         foreground='474747',
                         padding=2,
                         fontsize=11
@@ -344,10 +348,10 @@ def init_widgets_list():
                #         background = colors[1]
                #         ),
                widget.WindowName(
-                        font="JetBrainsMono Nerd Font Medium",
+                        font="Ubuntu Bold",
                         fontsize=13,
-                        foreground=colors[15],
-                        background=colors[1],
+                        foreground=colors[14],
+                        background=colors[10],
                         ),
                 #widget.Net(
     #         font="Ubuntu Bold",
@@ -376,11 +380,11 @@ def init_widgets_list():
                         linewidth=0,
                         padding=6,
                         foreground=colors[2],
-                        background=colors[1]
+                        background=colors[10]
                         ),
                widget.Memory(
-                       foreground=colors[15],
-                       background=colors[1],
+                       foreground=colors[11],
+                       background=colors[10],
                        fmt='Mem: {}',
                        padding=5
                        ),
@@ -388,11 +392,11 @@ def init_widgets_list():
                         linewidth=0,
                         padding=6,
                         foreground=colors[2],
-                        background=colors[1]
+                        background=colors[10]
                         ),
                widget.Volume(
-                       foreground=colors[16],
-                       background=colors[1],
+                       foreground=colors[13],
+                       background=colors[10],
                        fmt='Vol: {}',
                        padding=5
                        ),
@@ -400,7 +404,7 @@ def init_widgets_list():
                         linewidth=0,
                         padding=6,
                         foreground=colors[2],
-                        background=colors[1]
+                        background=colors[10]
                         ),
                # widget.Sep(
                #          linewidth = 1,
@@ -507,8 +511,8 @@ def init_widgets_list():
                #         fontsize=16
                #         ),
                widget.Clock(
-                        foreground=colors[17],
-                        background=colors[1],
+                        foreground=colors[20],
+                        background=colors[10],
                         format="%m/%d/%y %H:%M"
                         ),
                # widget.Sep(
@@ -518,7 +522,7 @@ def init_widgets_list():
                #          background = colors[1]
                #          ),
                widget.Systray(
-                        background=colors[1],
+                        background=colors[10],
                         icon_size=15,
                         padding=5
                         ),
@@ -532,7 +536,7 @@ def init_widgets_list():
                          linewidth = 1,
                          padding = 6,
                          foreground = colors[2],
-                         background = colors[1]
+                         background = colors[10]
                          ),
                arcobattery.BatteryIcon(
                          padding=0,
@@ -540,7 +544,7 @@ def init_widgets_list():
                          y_poss=2,
                          theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
                          update_interval = 5,
-                         background = colors[1]
+                         background = colors[10]
                          ),
 
               ]
