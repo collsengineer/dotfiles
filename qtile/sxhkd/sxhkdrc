@@ -126,7 +126,7 @@ super + shift + Return
 
 #dmenu
 super + shift + d
-	dmenu_run -i -nb '#1C1F24' -nf '#A6E3A1' -sb '#A6E3A1' -sf '#1C1F24' -fn 'JetBrainsMono Nerd Font:regular:pixelsize=14'
+	dmenu_run -i -nb '#181825' -nf '#fab387' -sb '#fab387' -sf '#181825' -fn 'JetBrainsMono Nerd Font:bold:pixelsize=14'
 	
 
 #reload sxhkd:
