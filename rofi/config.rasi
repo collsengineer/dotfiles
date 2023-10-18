@@ -12,10 +12,10 @@ configuration {
 
 * {
     bg: #11121D;
-    bg-alt: #444b6a;
+    bg-alt: #45475a;
 
-    fg: #FFFFFF;
-    fg-alt: #787c99;
+    fg: #fab387;
+    fg-alt: #585b70;
 
     background-color: @bg;
 
