@@ -252,7 +252,7 @@ colors = init_colors()
 
 def init_widgets_defaults():
     return dict(
-                font="Ubuntu Bold",
+                font="JetBrainsMono Nerd Font Bold",
                 fontsize=13,
                 padding=2,
                 background=colors[10])
@@ -271,18 +271,18 @@ def init_widgets_list():
                widget.Image(
             #filename = "~/.config/qtile/icons/bar_icons/tux1.png", # Linux's Tux icon
             #filename="~/.config/qtile/icons/bar_icons/python_classic.png", # Python classic icon
-                        filename = "~/.config/qtile/icons/bar_icons/gopher.png", # blue Gopher icon
+            #filename = "~/.config/qtile/icons/bar_icons/gopher.png", # blue Gopher icon
             #filename = "~/.config/qtile/icons/bar_icons/archlinux_black.png", # Arch linux logo black
             #filename = "~/.config/qtile/icons/bar_icons/archlinux_blue.png", # Arch linux logo blue 
-            #filename = "~/.config/qtile/icons/bar_icons/golang.png", # Golang logo 
+                        filename = "~/.config/qtile/icons/bar_icons/golang.png", # Golang logo 
             #filename = "~/.config/qtile/icons/bar_icons/gopher_red.png", # red Gopher 
                         scale='False',
                         background=colors[10]
                     ),
-               widget.Sep(
-                        linewidth=0,
+                widget.Sep(
+                        linewidth=2,
                         padding=6,
-                        foreground=colors[2],
+                        foreground=colors[19],
                         background=colors[10]
                     ),
                widget.GroupBox(
@@ -292,7 +292,7 @@ def init_widgets_list():
                         margin_x=0,
                         padding_y=5,
                         padding_x=3,
-                        borderwidth=3,
+                        borderwidth=2,
                         #disable_drag=True,
                         active=colors[12],
                         inactive=colors[19],
@@ -306,20 +306,20 @@ def init_widgets_list():
                         foreground=colors[2],
                         background=colors[10]
                         ),
-               #widget.Sep(
-               #         linewidth = 1,
-               #         padding = 10,
-               #         foreground = colors[2],
-               #         background = colors[1]
-               #         ),
-               widget.TextBox(
-                        text='|',
-                        font="Ubuntu Bold",
-                        background=colors[10],
-                        foreground='474747',
-                        padding=2,
-                        fontsize=11
+               widget.Sep(
+                        linewidth = 2,
+                        padding = 10,
+                        foreground = colors[19],
+                        background = colors[10]
                         ),
+    #          widget.TextBox(
+    #                   text='|',
+    #                   font="Ubuntu Bold",
+    #                   background=colors[10],
+    #                   foreground='474747',
+    #                   padding=2,
+    #                   fontsize=11
+    #                    ),
                widget.CurrentLayoutIcon(
                         custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons/bar_icons")],
                         foreground=colors[13],
@@ -328,27 +328,27 @@ def init_widgets_list():
                         scale=0.5
                        ),
                widget.CurrentLayout(
-                        font="Ubuntu Bold",
+                        font="JetBrainsMono Nerd Font Bold",
                         foreground=colors[21],
                         background=colors[10],
                         padding=5
                         ),
-               widget.TextBox(
-                        text='|',
-                        font="Ubuntu Bold",
-                        background=colors[10],
-                        foreground='474747',
-                        padding=2,
-                        fontsize=11
+    #           widget.TextBox(
+    #                    text='|',
+    #                    font="Ubuntu Bold",
+    #                    background=colors[10],
+    #                    foreground='474747',
+    #                    padding=2,
+    #                    fontsize=11
+    #                    ),
+               widget.Sep(
+                        linewidth = 2,
+                        padding = 10,
+                        foreground = colors[19],
+                        background = colors[10]
                         ),
-               #widget.Sep(
-               #         linewidth = 1,
-               #         padding = 10,
-               #         foreground = colors[2],
-               #         background = colors[1]
-               #         ),
                widget.WindowName(
-                        font="Ubuntu Bold",
+                        font="JetBrainsMono Nerd Font Bold",
                         fontsize=13,
                         foreground=colors[14],
                         background=colors[10],
@@ -377,33 +377,33 @@ def init_widgets_list():
         #                padding=5,
         #                ),
                widget.Sep(
-                        linewidth=0,
-                        padding=6,
-                        foreground=colors[2],
+                        linewidth=2,
+                        padding=10,
+                        foreground=colors[19],
                         background=colors[10]
                         ),
                widget.Memory(
-                       foreground=colors[11],
+                       foreground=colors[12],
                        background=colors[10],
-                       fmt='Mem: {}',
-                       padding=5
+                       fmt='Mem:{}',
+                       padding=2
                        ),
                widget.Sep(
-                        linewidth=0,
-                        padding=6,
-                        foreground=colors[2],
+                        linewidth=2,
+                        padding=10,
+                        foreground=colors[19],
                         background=colors[10]
                         ),
                widget.Volume(
                        foreground=colors[13],
                        background=colors[10],
-                       fmt='Vol: {}',
-                       padding=5
+                       fmt='Vol:{}',
+                       padding=2
                        ),
                widget.Sep(
-                        linewidth=0,
-                        padding=6,
-                        foreground=colors[2],
+                        linewidth=2,
+                        padding=10,
+                        foreground=colors[19],
                         background=colors[10]
                         ),
                # widget.Sep(
@@ -515,12 +515,12 @@ def init_widgets_list():
                         background=colors[10],
                         format="%m/%d/%y %H:%M"
                         ),
-               # widget.Sep(
-               #          linewidth = 1,
-               #          padding = 10,
-               #          foreground = colors[2],
-               #          background = colors[1]
-               #          ),
+                widget.Sep(
+                         linewidth = 2,
+                         padding = 10,
+                         foreground = colors[19],
+                         background = colors[10]
+                         ),
                widget.Systray(
                         background=colors[10],
                         icon_size=15,
@@ -533,9 +533,9 @@ def init_widgets_list():
                #         background=colors[0]
                #         ),
                 widget.Sep(
-                         linewidth = 1,
-                         padding = 6,
-                         foreground = colors[2],
+                         linewidth = 2,
+                         padding = 10,
+                         foreground = colors[19],
                          background = colors[10]
                          ),
                arcobattery.BatteryIcon(
