@@ -254,7 +254,7 @@ def init_widgets_defaults():
     return dict(
                 font="JetBrainsMono Nerd Font Bold",
                 fontsize=13,
-                padding=2,
+                padding=1,
                 background=colors[10])
 
 widget_defaults = init_widgets_defaults()
@@ -292,9 +292,9 @@ def init_widgets_list():
                         margin_x=0,
                         padding_y=5,
                         padding_x=3,
-                        borderwidth=2,
+                        borderwidth=1,
                         #disable_drag=True,
-                        active=colors[12],
+                        active=colors[20],
                         inactive=colors[19],
                         rounded=False,
                         highlight_color=colors[10],
@@ -329,7 +329,7 @@ def init_widgets_list():
                        ),
                widget.CurrentLayout(
                         font="JetBrainsMono Nerd Font Bold",
-                        foreground=colors[21],
+                        foreground=colors[12],
                         background=colors[10],
                         padding=5
                         ),
@@ -350,7 +350,7 @@ def init_widgets_list():
                widget.WindowName(
                         font="JetBrainsMono Nerd Font Bold",
                         fontsize=13,
-                        foreground=colors[14],
+                        foreground=colors[11],
                         background=colors[10],
                         ),
                 #widget.Net(
