@@ -253,7 +253,7 @@ colors = init_colors()
 def init_widgets_defaults():
     return dict(
                 font="JetBrainsMono Nerd Font Bold",
-                fontsize=13,
+                fontsize=12,
                 padding=1,
                 background=colors[10])
 
@@ -349,7 +349,7 @@ def init_widgets_list():
                         ),
                widget.WindowName(
                         font="JetBrainsMono Nerd Font Bold",
-                        fontsize=13,
+                        fontsize=12,
                         foreground=colors[11],
                         background=colors[10],
                         ),
