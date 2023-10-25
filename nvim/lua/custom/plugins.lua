@@ -92,11 +92,21 @@ local plugins = {
                 "csv",
                 "fish",
                 "requirements",
+                "yaml",
+                "ocaml",
+                "commonlisp",
+                "org",
             },
         },
     },
     {
-        "neovim/nvim-lspconfig", config = function() require "plugins.configs.lspconfig" require "custom.configs.lspconfig" end, }, {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require "plugins.configs.lspconfig"
+            require "custom.configs.lspconfig"
+        end,
+    },
+    {
         "jose-elias-alvarez/null-ls.nvim",
         event = "VeryLazy",
         ft = {
@@ -151,6 +161,30 @@ local plugins = {
             local M  = require "plugins.configs.cmp"
             table.insert(M.sources, {name = "crates"})
             return M
+        end,
+    },
+    {
+        "nvim-orgmode/orgmode",
+        dependencies = {
+            {"nvim-treesitter/nvim-treesitter", lazy = true},
+        },
+        event = "VeryLazy",
+        config = function()
+            -- Load treesitter grammar for org
+            require("orgmode").setup_ts_grammar()
+            -- Setup treesitter
+            require("nvim-treesitter.configs").setup({
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = { "org" },
+                },
+                ensure_installed = { "org" },
+            })
+            -- Setup orgmode
+            require("orgmode").setup({
+                org_agenda_files = '~/orgfiles/**/*',
+                org_default_notes_files = '~/orgfiles/refile.org',
+            })
         end,
     },
 }
