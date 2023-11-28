@@ -1,3 +1,5 @@
+env:
+  TERM: xterm-256color
 window:
   padding:
     x: 10
@@ -5,43 +7,60 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.9
+  opacity: 0.85
 
 scrolling:
   history: 10000
   multiplier: 3
 
-    #font:
-    #  normal:
-    #    family: JetBrainsMono Nerd Font
-    #    style:  Regular
-    #  bold:
-    #    family: JetBrainsMono Nerd Font
-    #    style:  Bold
-    #  italic:
-    #    family: JetBrainsMono Nerd Font
-    #    style:  Italic
-    #  bold_italic:
-    #    family: JetBrainsMono Nerd Font
-    #    style: Bold Italic
-    #  size: 13
-    #draw_bold_text_with_bright_colors: true
 font:
-  normal:
-    family: FiraCode Nerd Font Mono
-    style:  Medium
-  bold:
-    family: FiraCode Nerd Font Mono
-    style:  Bold
-  italic:
-    family: FiraCode Nerd Font Mono
-    style:  Italic
-  bold_italic:
-    family: FiraCode Nerd Font Mono
-    style: Bold Italic
-  size: 13
-
+    normal:
+      family: JetBrainsMono Nerd Font
+      style:  Regular
+    bold:
+      family: JetBrainsMono Nerd Font
+      style:  Bold
+    italic:
+      family: JetBrainsMono Nerd Font
+      style:  Italic
+    bold_italic:
+      family: JetBrainsMono Nerd Font
+      style: Bold Italic
+    size: 11
 draw_bold_text_with_bright_colors: true
+#font:
+#    normal:
+#      family: mononoki Nerd Font
+#      style:  Medium
+#    bold:
+#      family: mononoki Nerd Font
+#      style:  Bold
+#    italic:
+#      family: mononoki Nerd Font
+#      style:  Italic
+#    bold_italic:
+#      family: mononoki Nerd Font
+#      style: Bold Italic
+#    size: 13
+
+#draw_bold_text_with_bright_colors: true
+#font:
+#    normal:
+#      family: FiraCode Nerd Font
+#      style:  Medium
+#    bold:
+#      family: FiraCode Nerd Font
+#      style:  Bold
+#    italic:
+#      family: FiraCode Nerd Font
+#      style:  Italic
+#    bold_italic:
+#      family: FiraCode Nerd Font
+#      style: Bold Italic
+#    size: 12
+
+#draw_bold_text_with_bright_colors: true
+
   #import:
   #- ~/.config/alacritty/alacritty_themes/catppuccin-mocha.yml
 
@@ -460,4 +479,3 @@ shell:
 
 key_bindings:
   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
-
